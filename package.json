@@ -1,0 +1,29 @@
+{
+  "name": "monday-aws-integration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrynkodev/monday-aws-integration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrynkodev/monday-aws-integration/issues"
+  },
+  "homepage": "https://github.com/hrynkodev/monday-aws-integration#readme",
+  "dependencies": {
+    "aws-sdk": "^2.917.0",
+    "lodash": "^4.17.21",
+    "pino": "^6.11.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.3"
+  }
+}
