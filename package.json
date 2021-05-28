@@ -19,7 +19,8 @@
   "dependencies": {
     "aws-sdk": "^2.917.0",
     "lodash": "^4.17.21",
-    "pino": "^6.11.3"
+    "pino": "^6.11.3",
+    "serverless": "^2.43.1"
   },
   "devDependencies": {
     "eslint": "^7.27.0",
