@@ -25,7 +25,7 @@ provider:
       Action: events:*
       Resource: "*"
     - Effect: Allow
-      Action: cloudformation:*
+      Action: cloudformation:DescribeStacks
       Resource: "*"
 
 functions:
