@@ -24,6 +24,9 @@ provider:
     - Effect: Allow
       Action: events:*
       Resource: "*"
+    - Effect: Allow
+      Action: cloudformation:DescribeStacks
+      Resource: "*"
 
 functions:
   PutEvent:

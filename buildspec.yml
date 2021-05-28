@@ -8,6 +8,7 @@ phases:
     commands:
       - echo Installing source NPM dependencies...
       - npm install
+      - npm i -g serverless
   build:
     commands:
       - echo Build started on `date`
