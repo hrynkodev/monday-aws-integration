@@ -1,0 +1,43 @@
+service: monday-aws-integration
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - "s3:ListBucket"
+      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+    - Effect: Allow
+      Action:
+        - "s3:PutObject"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - "Ref" : "ServerlessDeploymentBucket"
+            - "/*"
+    - Effect: Allow
+      Action: lambda:InvokeFunction
+      Resource: "*"
+    - Effect: Allow
+      Action: events:*
+      Resource: "*"
+
+functions:
+  PutEvent:
+    handler: src/handlers/event-put.handler
+    events:
+      - http:
+          method: POST
+          path: event
+          cors: true
+  GetEvent:
+    handler: src/handlers/event-get.handler
+    events:
+      - eventBridge:
+          eventBus: mondaybus
+          pattern:
+            source:
+              - event-get.handler
