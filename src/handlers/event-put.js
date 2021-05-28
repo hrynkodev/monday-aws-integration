@@ -11,6 +11,7 @@ const handler = async (event) => {
     const payload = {
       ticket: get('pulseName', body),
       status: get('value.label.text', body),
+      newParam: 'any',
     };
 
     log.info(payload, 'Putting following event: ');
